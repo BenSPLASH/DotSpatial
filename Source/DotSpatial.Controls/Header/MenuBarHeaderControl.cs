@@ -545,7 +545,7 @@ namespace DotSpatial.Controls.Header
         /// </summary>
         private void LoadToolstripPositions()
         {
-            if (IgnoreToolstripPositionSaving) return;
+            if (true) return;
             var path = GetMenuBarHeaderControlConfigPath();
             if (!File.Exists(path)) return;
             using (var stream = File.Open(path, FileMode.Open))
@@ -581,7 +581,7 @@ namespace DotSpatial.Controls.Header
         /// <param name="e">The event args.</param>
         private void RememberLayout(object sender, EventArgs e)
         {
-            if (IgnoreToolstripPositionSaving) return;
+            if (true) return;
 
             // Because we don't know what was moved where we correct all positions.
             // This is done in reverse, because we don't want to repeat the first rows while the last row throws an exception.
@@ -619,7 +619,7 @@ namespace DotSpatial.Controls.Header
         /// <param name="e">The event args.</param>
         private void SaveToolstripPositions(object sender, EventArgs e)
         {
-            if (IgnoreToolstripPositionSaving) return;
+            if (true) return;
             var path = GetMenuBarHeaderControlConfigPath();
             var dir = Path.GetDirectoryName(path);
             Debug.Assert(dir != null, "dir may not be null");
