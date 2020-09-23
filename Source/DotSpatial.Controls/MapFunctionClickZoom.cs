@@ -104,9 +104,8 @@ namespace DotSpatial.Controls
         /// <param name="e">The event args.</param>
         protected override void OnMouseUp(GeoMouseArgs e)
         {
-            if (!(e.Map.IsZoomedToMaxExtent && e.Button == MouseButtons.Right))
+            if (e.Button == MouseButtons.Right|| e.Button == MouseButtons.Left)
             {
-                e.Map.IsZoomedToMaxExtent = false;
                 bool handled = false;
                 _currentPoint = e.Location;
 
