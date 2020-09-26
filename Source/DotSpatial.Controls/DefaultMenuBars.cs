@@ -442,9 +442,12 @@ namespace DotSpatial.Controls
     private void RemoveLayerClick(object sender, EventArgs e)
     {
       try
-      {
-        IMapGroup selectedLayerParent = (IMapGroup)App.Map.Layers.SelectedLayer.GetParentItem();
-        selectedLayerParent.Remove(App.Map.Layers.SelectedLayer);
+      { 
+        if (MessageBox.Show(App.Map.MapFrame.Parent, "Are you sure you want to remove layer " + App.Map.Layers.SelectedLayer.LegendText + "?", "BenSPLASH", MessageBoxButtons.YesNo) == DialogResult.Yes)
+        {
+          IMapGroup selectedLayerParent = (IMapGroup)App.Map.Layers.SelectedLayer.GetParentItem();
+          selectedLayerParent.Remove(App.Map.Layers.SelectedLayer);
+        }
       }
       catch
       {
